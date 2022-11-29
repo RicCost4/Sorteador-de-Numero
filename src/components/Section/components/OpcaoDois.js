@@ -1,28 +1,6 @@
 import React from "react";
 import { StyleOpcao } from "./CssOpcao";
 
-// function sortear(nInicial, nFinal) {
-    
-//     const nI = Number(nInicial)
-//     const nF = Number(nFinal)
-//     const lista = []
-    
-//     if (nI >= 1 && nF > nI){
-//         for(let c = nI; c <= nF; c++){
-//             lista.push(c)
-//         }
-//         const numeroGerado = Math.floor(Math.random(lista) * lista.length)
-//         const resultado = l[numeroGerado]
-    
-//         console.log(lista)
-//         console.log(`Retorno da posição da lista ${numeroGerado}`) //retorno console
-//         console.log(`O numero sorteado foi: ${resultado}`) //retorno console
-
-//     }else{
-//         console.log(`Numeros invalido, digite novamente.`)
-//     }
-// }
-
 export default function OpcaoDois(){
 
     const [valorInicial, setValorInicial] = React.useState('')
@@ -49,8 +27,8 @@ export default function OpcaoDois(){
             setValorFinal('')
 
         }else{
-            console.log(`Numeros invalido, digite novamente.`)
-            alert(`Numeros invalido, digite novamente.`)
+            console.log(`Números inválido, digite novamente.`)
+            alert(`Números inválido, digite novamente.`)
         }
     }
 

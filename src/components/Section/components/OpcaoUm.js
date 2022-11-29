@@ -28,8 +28,8 @@ export default function OpcaoUm(){
                 setValor('')
                 
             } else {
-                console.log(`Valor invalido ou ja encontrado na lista.`)
-                alert(`Valor invalido ou ja encontrado na lista.`)
+                console.log(`Valor invalido ou já encontrado na lista.`)
+                alert(`Valor invalido ou já encontrado na lista.`)
                 
             }
 
@@ -40,7 +40,7 @@ export default function OpcaoUm(){
         console.log(lista) //retorno console
 
         if(lista.length === 0){
-            console.log(`Lista vazia, impossivel fazer Sorteo.`)
+            console.log(`Lista vazia, impossivel fazer Sorteio.`)
             alert(`Lista vazia, impossivel fazer Sorteo.`)
         }else{
             const numeroGerado = Math.floor(Math.random(lista) * lista.length)
