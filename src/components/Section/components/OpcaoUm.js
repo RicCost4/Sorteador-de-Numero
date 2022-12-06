@@ -13,6 +13,7 @@ const lista = []
 
 export default function OpcaoUm(){
     const [valor, setValor] = React.useState('')
+    const [resultado, setResultado] = React.useState(null)
 
     const capturaInput = e => setValor(e.target.value)
 
@@ -41,13 +42,15 @@ export default function OpcaoUm(){
 
         if(lista.length === 0){
             console.log(`Lista vazia, impossivel fazer Sorteio.`)
-            alert(`Lista vazia, impossivel fazer Sorteo.`)
+            setResultado(`Lista vazia, impossivel fazer Sorteo.`)
+            // alert(`Lista vazia, impossivel fazer Sorteo.`)
         }else{
             const numeroGerado = Math.floor(Math.random(lista) * lista.length)
             const resultado = lista[numeroGerado]
             console.log(`Retorno da posição da lista ${numeroGerado}`) //retorno console
             console.log(`O numero sorteado foi: ${resultado}`)
-            alert(`Sua lista é ${lista}\nO numero sorteado foi: ${resultado}`)
+            // alert(`Sua lista é ${lista}\nO numero sorteado foi: ${resultado}`)
+            setResultado(resultado)
             lista.length = 0 //retorno console
             
         }
@@ -56,11 +59,13 @@ export default function OpcaoUm(){
     const exibir = (x) => {
         const exibirValor = Number(x)
 
-        if( x === ''){
-            return ``
-        }else{
+        if( x !== ''){
             return `Numero há ser adicionado ao sorteo ${exibirValor}`
+        }else if(resultado !== null){
+            return resultado
         }
+
+        return ``
     }
     
     return(
