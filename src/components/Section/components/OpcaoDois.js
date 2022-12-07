@@ -23,7 +23,6 @@ export default function OpcaoDois(){
             console.log(lista)
             console.log(`Retorno da posição da lista ${numeroGerado}`) //retorno console
             console.log(`O numero sorteado foi: ${resultado}`)
-            alert(`Sua lista é ${lista}\nO numero sorteado foi: ${resultado}`) //retorno console
             setCapResultado(resultado)
             setValorInicial('')
             setValorFinal('')
@@ -32,13 +31,6 @@ export default function OpcaoDois(){
             console.log(`Números inválido, digite novamente.`)
             setCapResultado(`Números inválido, digite novamente.`)
         }
-    }
-
-    const exibir = () => {
-        if( capResultado !== null){
-            return `O numero sorteado foi: ${capResultado}`
-        }
-        return ''
     }
 
     return(
@@ -60,7 +52,7 @@ export default function OpcaoDois(){
                 <button type="submit" onClick={sortear}>Sortear</button>
             </div>
             <p>
-                {exibir}
+                O numero sorteado foi: {capResultado}
             </p>
         </StyleOpcao>
     )
