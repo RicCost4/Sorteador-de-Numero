@@ -5,6 +5,7 @@ export default function OpcaoDois(){
 
     const [valorInicial, setValorInicial] = React.useState('')
     const [valorFinal, setValorFinal] = React.useState('')
+    const [capResultado, setCapResultado] = React.useState(null)
 
     const sortear = async e => {
         e.preventDefault()
@@ -23,16 +24,22 @@ export default function OpcaoDois(){
             console.log(`Retorno da posição da lista ${numeroGerado}`) //retorno console
             console.log(`O numero sorteado foi: ${resultado}`)
             alert(`Sua lista é ${lista}\nO numero sorteado foi: ${resultado}`) //retorno console
+            setCapResultado(resultado)
             setValorInicial('')
             setValorFinal('')
 
         }else{
             console.log(`Números inválido, digite novamente.`)
-            alert(`Números inválido, digite novamente.`)
+            setCapResultado(`Números inválido, digite novamente.`)
         }
     }
 
-    // const capturaInput = e => setValorInicial(e.target.value)
+    const exibir = () => {
+        if( capResultado !== null){
+            return `O numero sorteado foi: ${capResultado}`
+        }
+        return ''
+    }
 
     return(
         <StyleOpcao>
@@ -53,7 +60,7 @@ export default function OpcaoDois(){
                 <button type="submit" onClick={sortear}>Sortear</button>
             </div>
             <p>
-                
+                {exibir}
             </p>
         </StyleOpcao>
     )
